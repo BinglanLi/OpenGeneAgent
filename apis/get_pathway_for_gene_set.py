@@ -23,7 +23,10 @@ def get_pathway_for_gene_set(gene_set):
     data = json.loads(response_add.text)
     list_id = data['userListId']
     dic = {}
-    for backgroundType in ["KEGG_2021_Human", "Reactome_2022", "BioPlanet_2019", "MSigDB_Hallmark_2020"]:
+    # Mask Reactome for benchmarking
+    for backgroundType in ["KEGG_2021_Human", "BioPlanet_2019", "MSigDB_Hallmark_2020"]:
+    # Full source lookup
+    # for backgroundType in ["KEGG_2021_Human", "Reactome_2022", "BioPlanet_2019", "MSigDB_Hallmark_2020"]:
         try:
             ENRICHR_URL_RESULTS = f'http://maayanlab.cloud/Enrichr/enrich?userListId={list_id}&backgroundType={backgroundType}'
             try:

@@ -9,13 +9,26 @@ def get_enrichment_for_gene_set(gene_set):
 
     url = "https://biit.cs.ut.ee/gprofiler/api/gost/profile/"
     headers = {'Content-Type': 'application/json'}
+    # Mask Reactome for bencharmarking
     payload = {
         "organism": "hsapiens",
         "query": gene_list,
-        "sources": [],
+        "sources": [
+            "GO:MF", "GO:CC", "GO:BP",
+            "KEGG", "WP", "TF", "MIRNA",
+            "HPA", "CORUM", "HP",
+        ],
         "all_results": False,
         "user_threshold": 0.05
     }
+    # Full source lookup
+    # payload = {
+    #     "organism": "hsapiens",
+    #     "query": gene_list,
+    #     "sources": [],
+    #     "all_results": False,
+    #     "user_threshold": 0.05
+    # }
 
     try:
         session = make_session()
