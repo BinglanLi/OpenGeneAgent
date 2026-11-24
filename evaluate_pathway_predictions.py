@@ -48,9 +48,9 @@ dashes, asterisks, or other special characters).
 
 1. Write a brief feedback assessing whether the predicted name matches the \
 reference pathway, strictly based on the score rubric below.
-2. After writing a feedback, write a score that is an integer between 1 and 5.
+2. After writing feedback, write a score that is an integer between 1 and 5.
 3. The output format must look as follows: \
-"Feedback: (write a feedback) [RESULT] (an integer between 1 and 5)"
+"Feedback: (write a feedback) [RESULT] (an integer between 1 and 4)"
 4. Please do not generate any other opening, closing, or explanations.
 
 ###Reference Pathway Name (Score 4):
